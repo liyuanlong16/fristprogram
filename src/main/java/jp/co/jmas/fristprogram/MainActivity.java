@@ -30,12 +30,12 @@ public class MainActivity extends BaseActivity {
         toSecondActivityButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String data = "Hello ThirdActivity";
+                String data = "Hello SecondActivity";
                 Intent intent = new Intent(MainActivity.this, SecondActivity.class);
-//                intent.putExtra("data", data);
-//                intent.setData(Uri.parse("tel:0702"));
-//                startActivityForResult(intent, 1);
-                startActivity(intent);
+                intent.putExtra("data", data);
+                intent.setData(Uri.parse("tel:0702"));
+                startActivityForResult(intent, 1);
+//                startActivity(intent);
 
             }
         });

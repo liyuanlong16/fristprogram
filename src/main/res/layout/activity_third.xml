@@ -7,7 +7,6 @@
     tools:context="jp.co.jmas.fristprogram.ThirdActivity">
 
     <TextView
-        android:id="@+id/getDataTextVeiw"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="ThridActivity"/>

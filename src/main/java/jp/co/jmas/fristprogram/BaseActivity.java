@@ -23,6 +23,6 @@ public class BaseActivity extends AppCompatActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        ActivityCollector.removeAll();
+//        ActivityCollector.removeAll();
     }
 }
