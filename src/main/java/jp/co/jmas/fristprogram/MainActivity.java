@@ -10,7 +10,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends BaseActivity {
 
     private TextView aTextView;
     private String savedStr;
@@ -18,7 +18,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+//        Log.d("MainActivity---------->", "taskのId"+getTaskId());
         if (savedInstanceState != null) {//防止被系统强制突然回收而防止保存好的状态丢失
             savedStr = savedInstanceState.getString("data");
             Log.d("MainActivity---------->", savedStr);
@@ -26,16 +26,16 @@ public class MainActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_main);
         aTextView = (TextView) findViewById(R.id.aTextView);
-        Button toThirdActivityButton = (Button) findViewById(R.id.toThirdActivityButton);
-        toThirdActivityButton.setOnClickListener(new View.OnClickListener() {
+        Button toSecondActivityButton = (Button) findViewById(R.id.toSecondActivityButton);
+        toSecondActivityButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 String data = "Hello ThirdActivity";
-                Intent intent = new Intent(MainActivity.this, ThirdActivity.class);
-                intent.putExtra("data", data);
+                Intent intent = new Intent(MainActivity.this, SecondActivity.class);
+//                intent.putExtra("data", data);
 //                intent.setData(Uri.parse("tel:0702"));
-                startActivityForResult(intent, 1);
-//                startActivity(intent);
+//                startActivityForResult(intent, 1);
+                startActivity(intent);
 
             }
         });

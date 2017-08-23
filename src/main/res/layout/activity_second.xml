@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="jp.co.jmas.fristprogram.ThirdActivity">
-
-    <TextView
-        android:id="@+id/getDataTextVeiw"
+    tools:context="jp.co.jmas.fristprogram.SecondActivity">
+    <Button
+        android:id="@+id/toThirdActivityButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="ThridActivity"/>
-</android.support.constraint.ConstraintLayout>
+        android:text="toThirdActivity"/>
+
+</LinearLayout>

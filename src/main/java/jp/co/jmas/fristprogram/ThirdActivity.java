@@ -7,34 +7,43 @@ import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
-public class ThirdActivity extends AppCompatActivity {
+import jp.co.jmas.fristprogram.tool.ActivityCollector;
+
+public class ThirdActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+//        Log.d("ThirdActivity--->", "taskのId"+getTaskId());
         setContentView(R.layout.activity_third);
-       TextView getDataTextVeiw = (TextView) findViewById(R.id.getDataTextVeiw);
-        Intent intent  = getIntent();
-        String data = intent.getStringExtra("data");
-        getDataTextVeiw.setText(data);
-        Log.d("ThirdActivity",data);
-        getDataTextVeiw.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent_back= new Intent ();
-                intent_back.putExtra("backMessage","もらった　こんにちは　MainActivity");
-                setResult(RESULT_OK,intent_back);
-                finish();
-            }
-        });
+        TextView getDataTextVeiw = (TextView) findViewById(R.id.getDataTextVeiw);
+//        Intent intent  = getIntent();
+//        String data = intent.getStringExtra("data");
+//        getDataTextVeiw.setText(data);
+////        Log.d("ThirdActivity",data);
+//        getDataTextVeiw.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Intent intent_back= new Intent ();
+//                intent_back.putExtra("backMessage","もらった　こんにちは　MainActivity");
+//                setResult(RESULT_OK,intent_back);
+//                finish();
+//            }
+//        });
     }
 
+//    @Override
+//    public void onBackPressed() {
+////        super.onBackPressed();
+//        Intent intent_back = new Intent();
+//        intent_back.putExtra("backMessage", "もらった　こんにちは　MainActivity");
+//        setResult(RESULT_OK, intent_back);
+//        finish();
+//    }
+
     @Override
-    public void onBackPressed() {
-//        super.onBackPressed();
-        Intent intent_back= new Intent ();
-        intent_back.putExtra("backMessage","もらった　こんにちは　MainActivity");
-        setResult(RESULT_OK,intent_back);
-        finish();
+    protected void onDestroy() {
+        super.onDestroy();
+        ActivityCollector.removeAll();
     }
 }
